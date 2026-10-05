@@ -12,4 +12,11 @@ it can accidentally keep the screen and its resources alive after the screen clo
 A weak reference is like having someone's phone number on a note that might get thrown away. It doesn't keep the object alive. Android may clean it up.
 You must check if the object exists or not before you use it. 
 
+Usage Example:
+| Feature | Context Need |
+| --- | --- | 
+| Biometrics | AndroidX Biometric prompt needs a FragmentActivity or Fragment. Keep the prompt tied to that screen's lifecycle. Dont store the activity in a long-lived singleton.|
+| Passkeys| Pass the current activity. Don't store the activity in a long-lived class or singleton |
+| Compose UI | LocalContext.current when needed.|
+
 
